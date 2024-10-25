@@ -267,11 +267,11 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '🟢' }, -- Green square with a plus icon for additions
-        change = { text = '🔵' }, -- Yellow square with a pencil icon for changes
-        delete = { text = '🔴' }, -- Red square with a minus icon for deletions
-        topdelete = { text = '🔴' }, -- Blue square with a trash can icon for top deletions
-        changedelete = { text = '🟣' }, -- Purple square with a refresh icon for changes and deletions
+        add = { text = '➕' }, -- Green square with a plus icon for additions
+        change = { text = '✏️' }, -- Yellow square with a pencil icon for changes
+        delete = { text = '➖' }, -- Red square with a minus icon for deletions
+        topdelete = { text = '🗑️' }, -- Blue square with a trash can icon for top deletions
+        changedelete = { text = '🔄' }, -- Purple square with a refresh icon for changes and deletions
       },
     },
   },
