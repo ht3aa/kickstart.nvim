@@ -198,6 +198,9 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
+vim.keymap.set('n', '<leader>w', '<CMD>w<CR>', opts)
+vim.keymap.set('n', '<leader>q', '<CMD>q<CR>', opts)
+
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', opts)
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', opts)
 
@@ -264,11 +267,11 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        add = { text = '🟢' }, -- Green square with a plus icon for additions
+        change = { text = '🔵' }, -- Yellow square with a pencil icon for changes
+        delete = { text = '🔴' }, -- Red square with a minus icon for deletions
+        topdelete = { text = '🔴' }, -- Blue square with a trash can icon for top deletions
+        changedelete = { text = '🟣' }, -- Purple square with a refresh icon for changes and deletions
       },
     },
   },
@@ -865,7 +868,7 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = true } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
