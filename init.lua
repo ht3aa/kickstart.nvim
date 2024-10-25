@@ -201,6 +201,8 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('n', '<leader>w', '<CMD>w<CR>', opts)
 vim.keymap.set('n', '<leader>q', '<CMD>q<CR>', opts)
 
+vim.keymap.set('n', '<leader>th', '<CMD>TSToggle highlight<CR>', opts)
+
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', opts)
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', opts)
 
