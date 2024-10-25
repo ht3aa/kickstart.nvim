@@ -926,11 +926,18 @@ require('lazy').setup({
       vim.api.nvim_create_augroup('BladeFiletypeRelated', { clear = true })
 
       -- Set the filetype for Blade files
-      vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+      vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'BufEnter' }, {
         pattern = { '*.blade.php' },
         command = 'set ft=blade',
         group = 'BladeFiletypeRelated',
       })
+      -- in my settings
+      -- Filetypes --
+      vim.filetype.add {
+        pattern = {
+          ['.*%.blade%.php'] = 'blade',
+        },
+      }
     end,
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
