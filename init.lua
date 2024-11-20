@@ -735,7 +735,6 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         blade = { 'blade-formatter' },
-        php = { 'phpcbf', 'pint', 'pretty-php' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
