@@ -735,7 +735,7 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         blade = { 'blade-formatter' },
-        -- php = { 'phpcbf', 'pint', 'pretty-php' },
+        -- php = { 'phpcbf', 'pint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -865,7 +865,6 @@ require('lazy').setup({
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
-
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
@@ -996,3 +995,33 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- harpoon config
+
+local harpoon = require 'harpoon'
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+vim.keymap.set('n', '<leader>oa', function()
+  harpoon:list():add()
+end)
+vim.keymap.set('n', '<leader>ot', function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+vim.keymap.set('n', '<leader>1', function()
+  harpoon:list():select(1)
+end)
+vim.keymap.set('n', '<leader>2', function()
+  harpoon:list():select(2)
+end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set('n', '<C-h>', function()
+  harpoon:list():prev()
+end)
+vim.keymap.set('n', '<C-l>', function()
+  harpoon:list():next()
+end)
