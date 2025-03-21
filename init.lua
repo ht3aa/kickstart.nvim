@@ -205,6 +205,8 @@ vim.keymap.set('n', '<leader>th', '<CMD>TSToggle highlight<CR>', opts)
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', opts)
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', opts)
 
+vim.keymap.set('n', '<leader>p', 'i/**\n test.\n /<Esc>', { noremap = true, silent = true })
+
 vim.keymap.set('n', '<TAB>', '<C-6>', opts)
 
 vim.keymap.set('i', 'jj', '<ESC>', opts)
